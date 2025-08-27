@@ -8,11 +8,11 @@ from sklearn.metrics import mean_absolute_error, r2_score
 
 df = pd.read_csv("data/processed/products_model_ready.csv")
 
-# 1) Correlations & feature importance proxy
+1) Correlations & feature importance proxy
 corr = df.corr(numeric_only=True)["price_log"].sort_values(ascending=False)
 print("Top drivers of price_log:\\n", corr.head())
 
-# 2) Simple baseline prediction
+2) Simple baseline prediction
 X = df.drop(columns=["price_log"])
 y = df["price_log"]
 
